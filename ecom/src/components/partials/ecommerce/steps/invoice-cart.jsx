@@ -73,8 +73,7 @@ const InvoiceCart = ({ token }) => {
       };
 
       const response = await axios.post(`${API}/tax`, postData);
-      console.log("Order Posted Successfully:", response.data);
-
+      
       navigate("/dashboard");
     } catch (error) {
       console.error("Error posting order:", error);

@@ -29,13 +29,15 @@ const ProductCard = (props) => {
   };
 
   const handleCartAction = (product) => {
+    
     if (isInCart(product)) {
-      dispatch(removeFromCart(product._id)); // Dispatch action with _id
+     
+      dispatch(removeFromCart(product)); 
     } else {
+      
       dispatch(addToCart(product));
     }
   };
-
   return (
     <div className="product-container">
       {products.map((product, index) => (

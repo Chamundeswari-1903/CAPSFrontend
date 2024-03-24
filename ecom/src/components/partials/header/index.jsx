@@ -10,6 +10,7 @@ import Logo from "./Tools/Logo";
 import Profile from "./Tools/Profile";
 import useRtl from "../../../hooks/useRtl";
 import useMobileMenu from "../../../hooks/useMobileMenu";
+import HeaderCart from "./Tools/cart";
 
 
 const Header = ({ className = "custom-class", token }) => {
@@ -102,6 +103,7 @@ const Header = ({ className = "custom-class", token }) => {
           ) : null}
           {/* Nav Tools  */}
           <div className="nav-tools flex items-center lg:space-x-6 space-x-3 rtl:space-x-reverse">
+          <HeaderCart />
             {width >= breakpoints.md && <Profile token={token} />}
             {width <= breakpoints.md && (
               <div

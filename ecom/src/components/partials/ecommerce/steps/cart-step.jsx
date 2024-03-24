@@ -7,13 +7,12 @@ import { useDispatch } from "react-redux";
 
 const CartStep = () => {
   const items = useSelector((state) => state.cart);
-  console.log(items);
+  // console.log(items);
   const dispatch = useDispatch();
 
   const handleRemoveFromCart = (_id) => {
-    dispatch(removeFromCart({ _id })); 
-};
-
+    dispatch(removeFromCart({ _id }));
+  };
 
   const [quantities, setQuantities] = useState({});
 
@@ -34,7 +33,7 @@ const CartStep = () => {
   };
 
   const totalPrice = items.reduce((total, item) => {
-    return total + (item.productcost * (quantities[item._id] || 1));
+    return total + item.productcost * (quantities[item._id] || 1);
   }, 0);
 
   return (
